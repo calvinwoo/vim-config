@@ -13,6 +13,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sleuth'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
 Plug 'wincent/terminus'
 
 " Add plugins to &runtimepath
@@ -84,6 +85,7 @@ set backspace=indent,eol,start
 
 """"""
 " CoC
+let g:airline#extensions#coc#enabled = 1
 let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-css', 'coc-tslint-plugin', 'coc-json', 'coc-html', 'coc-python', 'coc-sh']
 
 " if hidden is not set, TextEdit might fail.
@@ -94,7 +96,7 @@ set nobackup
 set nowritebackup
 
 " Better display for messages
-set cmdheight=2
+" set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
@@ -195,7 +197,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics

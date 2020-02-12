@@ -1,5 +1,3 @@
-# git config --global core.excludesfile ~/.vim/gitignore_global.txt
-
 # VIM Files
 *.swp
 *.swo
