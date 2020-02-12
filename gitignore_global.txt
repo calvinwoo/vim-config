@@ -1,0 +1,11 @@
+# git config --global core.excludesfile ~/.vim/gitignore_global.txt
+
+# VIM Files
+*.swp
+*.swo
+*.un~
+
+.vimrc
+.vim
+
+.DS_Store
