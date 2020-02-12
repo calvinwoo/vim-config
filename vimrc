@@ -12,8 +12,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sleuth'
 Plug 'sheerun/vim-polyglot'
-"Plug 'lifepillar/vim-mucomplete'
-"Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wincent/terminus'
 
@@ -243,31 +241,6 @@ nnoremap <Tab> :CtrlP<CR>
 nnoremap <S-Tab> :CtrlPBuffer<CR>
 
 """"""
-" Omnicomplete
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Completion for relative file
-" https://superuser.com/questions/604122/vim-file-name-completion-relative-to-current-file
-:autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
-:autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
-
-" If you prefer the Omni-Completion tip window to close when a selection is
-" made, these lines close it on movement in insert mode or when leaving
-" insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-""""""
-" MuComplete
-let g:mucomplete#enable_auto_at_startup = 1
-set completeopt+=menuone
-set completeopt+=noselect
-set completeopt+=noinsert
-
-""""""
 " FileType settings
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
@@ -279,29 +252,3 @@ au BufRead *.md setlocal spell
 au BufNewFile,BufRead *.handlebars set filetype=html
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
 au BufNewFile,BufRead *.mcss set filetype=css
-
-""""""
-" Ale
-
-"let g:ale_fixers = {
-"\   'javascript': ['prettier'],
-"\   'typescript': ['tslint', 'prettier'],
-"\   'typescript.jsx': ['tslint', 'prettier']
-"\}
-
-let g:ale_linters = {
-\   'typescript': ['tsserver', 'typecheck', 'tslint'],
-\   'typescript.jsx': ['tsserver', 'typecheck', 'tslint'],
-\   'python': ['flake8']
-\}
-
-" let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
-let g:ale_python_auto_pipenv = 1
-
-nnoremap <Leader>af :ALEGoToDefinition<CR>
-nnoremap <Leader>ad :ALEDetail<CR>
-nnoremap <Leader>ae :ALEFindReferences<CR>
-nnoremap <Leader>ai :ALEHover<CR>
-nmap <Leader>aj :ALENext<CR>
-nmap <Leader>ak :ALEPrevious<CR>
