@@ -1,6 +1,8 @@
 {
   "prettier.requireConfig": true,
+  "tslint.enable": false,
   "tslint.autoFixOnSave": true,
+  "eslint.enable": false,
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "typescript.tsx", "css", "Markdown"]
 }
