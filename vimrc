@@ -7,7 +7,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
-Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sleuth'
@@ -43,9 +43,10 @@ set laststatus=2
 " Color Scheme
 syntax enable
 set termguicolors
+set t_Co=256
 " set background=dark
 set background=light
-colorscheme gruvbox
+colorscheme PaperColor
 
 " Local vimrc
 set exrc
