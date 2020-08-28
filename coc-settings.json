@@ -1,7 +1,6 @@
 {
   "prettier.requireConfig": true,
   "prettier.onlyUseLocalVersion": true,
-  "tslint.enable": false,
   "tslint.autoFixOnSave": true,
   "eslint.enable": false,
   "eslint.autoFixOnSave": true,
