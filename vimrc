@@ -9,12 +9,14 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sleuth'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'wincent/terminus'
+Plug 'junegunn/vim-peekaboo'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -227,6 +229,7 @@ nmap <silent> gr <Plug>(coc-references)
 " CTRLP
 let g:ctrlp_working_path_mode = ''
 " let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components|build|dev|lending/dist|jestCache|coverage)|(\.(swp|git))$'
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " The Silver Searcher
 if executable('ag')
